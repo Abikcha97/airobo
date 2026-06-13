@@ -1,0 +1,634 @@
+openapi: 3.0.3
+info:
+  title: Kiosk Cash Withdrawal Service API
+  description: |
+    REST API for kiosk-based cash withdrawal operations.
+    Supports three roles: ADMIN, AGENT, KIOSK.
+    All monetary values are in UZS (so'm), stored as BIGINT.
+  version: "1.0.0"
+  contact:
+    name: API Support
+
+servers:
+  - url: https://api.cashwithdrawal.uz/api/v1
+    description: Production
+  - url: https://sandbox.cashwithdrawal.uz/api/v1
+    description: Sandbox
+
+security:
+  - BearerAuth: []
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error:   { type: string, example: INVALID_CARD }
+        message: { type: string, example: "Karta raqami noto'g'ri formatda" }
+
+    Transaction:
+      type: object
+      properties:
+        transaction_id:        { type: integer }
+        agent_transaction_id:  { type: string }
+        status:                { type: string, enum: [INITIATED, OTP_SENT, OTP_VERIFIED, CHECK_PENDING, CHECK_FAILED, PAY_PENDING, DISPENSING, COMPLETED, FAILED, REFUNDED, DISPENSE_FAILED, DISPENSE_TIMEOUT] }
+        amount:                { type: integer }
+        commission:            { type: integer }
+        masked_card:           { type: string, example: "860014******5346" }
+        created_at:            { type: string, format: date-time }
+        updated_at:            { type: string, format: date-time }
+
+    AgentDeposit:
+      type: object
+      properties:
+        agent_id:       { type: integer }
+        balance:        { type: integer }
+        total_credited: { type: integer }
+        total_debited:  { type: integer }
+        as_of:          { type: string, format: date-time }
+
+    DispenserDenomination:
+      type: object
+      properties:
+        denomination: { type: integer, example: 100000 }
+        quantity:     { type: integer }
+        total:        { type: integer }
+        status:       { type: string, enum: [OK, LOW, EMPTY] }
+
+paths:
+  # ================================================================
+  # Auth
+  # ================================================================
+  /auth/login:
+    post:
+      summary: User login
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username: { type: string }
+                password: { type: string }
+      responses:
+        "200":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:  { type: string }
+                  refresh_token: { type: string }
+                  expires_in:    { type: integer, example: 3600 }
+                  role:          { type: string, enum: [ADMIN, AGENT, KIOSK] }
+        "401": { description: Invalid credentials, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "423": { description: Account locked, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+
+  /auth/refresh:
+    post:
+      summary: Refresh access token
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refresh_token]
+              properties:
+                refresh_token: { type: string }
+      responses:
+        "200":
+          description: New access token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token: { type: string }
+                  expires_in:   { type: integer }
+        "401": { description: Invalid refresh token }
+
+  /auth/logout:
+    post:
+      summary: Logout (invalidate refresh token)
+      tags: [Auth]
+      responses:
+        "200": { description: Logged out }
+
+  # ================================================================
+  # Transactions (KIOSK role)
+  # ================================================================
+  /transactions/initiate:
+    post:
+      summary: Initiate transaction — submit card details
+      tags: [Transactions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [kiosk_id, card_account, card_expire, service_id]
+              properties:
+                kiosk_id:     { type: integer }
+                card_account: { type: string, minLength: 16, maxLength: 16, example: "8600140000005346" }
+                card_expire:  { type: string, pattern: "^(0[1-9]|1[0-2])/\\d{2}$", example: "12/27" }
+                service_id:   { type: integer, example: 8947 }
+      responses:
+        "200":
+          description: Transaction initiated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transaction_id:       { type: integer }
+                  agent_transaction_id: { type: string }
+                  status:               { type: string, example: INITIATED }
+                  masked_card:          { type: string, example: "860014******5346" }
+        "422":
+          description: Invalid card
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:   { type: string, enum: [INVALID_CARD, CARD_EXPIRED] }
+                  message: { type: string }
+
+  /transactions/{id}/send-otp:
+    post:
+      summary: Send OTP to card-linked phone
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: OTP sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:       { type: string, example: OTP_SENT }
+                  phone_masked: { type: string, example: "998909***900" }
+                  expires_in:   { type: integer, example: 180 }
+        "429":
+          description: OTP resend limit exceeded
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "503":
+          description: SMS gateway error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /transactions/{id}/verify-otp:
+    post:
+      summary: Verify OTP code
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [otp_code]
+              properties:
+                otp_code: { type: string, minLength: 6, maxLength: 6 }
+      responses:
+        "200":
+          description: OTP verified
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: OTP_VERIFIED }
+        "400":
+          description: Invalid or expired OTP
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Error"
+                  - type: object
+                    properties:
+                      attempts_left: { type: integer }
+        "423":
+          description: Transaction blocked (too many attempts)
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Error"
+                  - type: object
+                    properties:
+                      retry_after: { type: integer, example: 900 }
+
+  /transactions/{id}/check:
+    post:
+      summary: Check dispenser inventory and card balance
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [amount]
+              properties:
+                amount: { type: integer, minimum: 10000, maximum: 5000000, example: 50000 }
+      responses:
+        "200":
+          description: Check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:                   { type: string, example: CHECK_PENDING }
+                  check_transaction_id:      { type: integer }
+                  available_denominations:   { type: array, items: { type: integer } }
+        "402": { description: Insufficient card balance }
+        "422": { description: Insufficient dispenser / invalid amount }
+        "504": { description: Provider timeout }
+
+  /transactions/{id}/pay:
+    post:
+      summary: Execute payment and dispense cash
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sms_code, check_transaction_id]
+              properties:
+                sms_code:             { type: string }
+                check_transaction_id: { type: integer }
+      responses:
+        "200":
+          description: Payment completed, cash dispensed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:                   { type: string, example: COMPLETED }
+                  provider_transaction_id:  { type: integer }
+                  amount_dispensed:         { type: integer }
+                  receipt_number:           { type: string }
+        "402": { description: Payment declined }
+        "503": { description: Dispenser error }
+        "504": { description: Provider timeout }
+
+  /transactions/{id}/status:
+    get:
+      summary: Get transaction status
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Transaction status
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Transaction" }
+        "404": { description: Not found }
+
+  /transactions:
+    get:
+      summary: Search transactions
+      tags: [Transactions]
+      parameters:
+        - in: query
+          name: agent_transaction_id
+          schema: { type: string }
+        - in: query
+          name: status
+          schema: { type: string }
+        - in: query
+          name: from
+          schema: { type: string, format: date }
+        - in: query
+          name: to
+          schema: { type: string, format: date }
+        - in: query
+          name: kiosk_id
+          schema: { type: integer }
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: per_page
+          schema: { type: integer, default: 50, maximum: 100 }
+      responses:
+        "200": { description: Paginated list of transactions }
+
+  /transactions/{id}/refund:
+    post:
+      summary: Refund a completed transaction (ADMIN only)
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason, initiated_by]
+              properties:
+                reason:       { type: string }
+                initiated_by: { type: string }
+      responses:
+        "200":
+          description: Refund processed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:                { type: string, example: REFUNDED }
+                  refund_amount:         { type: integer }
+                  refund_transaction_id: { type: string }
+        "409": { description: Already refunded or invalid status }
+        "403": { description: Forbidden }
+
+  # ================================================================
+  # Dispenser (AGENT/ADMIN)
+  # ================================================================
+  /kiosks/{id}/dispenser/fill:
+    post:
+      summary: Fill dispenser with banknotes
+      tags: [Dispenser]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fills]
+              properties:
+                fills:
+                  type: array
+                  items:
+                    type: object
+                    required: [denomination, quantity]
+                    properties:
+                      denomination: { type: integer, example: 100000 }
+                      quantity:     { type: integer, minimum: 1 }
+                notes: { type: string }
+      responses:
+        "200":
+          description: Fill successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  kiosk_id:         { type: integer }
+                  total_cash_added: { type: integer }
+                  inventory_after:
+                    type: array
+                    items: { $ref: "#/components/schemas/DispenserDenomination" }
+
+  /kiosks/{id}/dispenser/inventory:
+    get:
+      summary: Get real-time dispenser inventory
+      tags: [Dispenser]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Inventory
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  kiosk_id:      { type: integer }
+                  total_cash:    { type: integer }
+                  last_updated:  { type: string, format: date-time }
+                  denominations:
+                    type: array
+                    items: { $ref: "#/components/schemas/DispenserDenomination" }
+
+  /kiosks/{id}/dispenser/history:
+    get:
+      summary: Get dispenser fill history
+      tags: [Dispenser]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: from
+          schema: { type: string, format: date }
+        - in: query
+          name: to
+          schema: { type: string, format: date }
+        - in: query
+          name: per_page
+          schema: { type: integer, default: 20, maximum: 100 }
+      responses:
+        "200": { description: Paginated fill history }
+
+  # ================================================================
+  # Agent APIs
+  # ================================================================
+  /agents/{id}/deposit/balance:
+    get:
+      summary: Get agent deposit balance
+      tags: [Agent]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Balance
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AgentDeposit" }
+
+  /agents/{id}/deposit/movements:
+    get:
+      summary: Get deposit movements
+      tags: [Agent]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: type
+          schema: { type: string, enum: [CREDIT, DEBIT] }
+        - in: query
+          name: from
+          schema: { type: string, format: date }
+        - in: query
+          name: to
+          schema: { type: string, format: date }
+      responses:
+        "200": { description: Paginated deposit movements }
+
+  /agents/{id}/rewards:
+    get:
+      summary: Get agent reward history
+      tags: [Agent]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: Reward history }
+
+  /agents/{id}/reconciliation:
+    get:
+      summary: Get daily reconciliation report
+      tags: [Agent]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: date
+          schema: { type: string, format: date }
+      responses:
+        "200": { description: Reconciliation report }
+
+  /agents/{id}/dashboard:
+    get:
+      summary: Agent dashboard — current month stats and balance
+      tags: [Agent]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: Dashboard data }
+
+  # ================================================================
+  # Admin APIs
+  # ================================================================
+  /admin/transactions:
+    get:
+      summary: Admin — list all transactions with filters
+      tags: [Admin]
+      parameters:
+        - in: query
+          name: agent_id
+          schema: { type: integer }
+        - in: query
+          name: kiosk_id
+          schema: { type: integer }
+        - in: query
+          name: status
+          schema: { type: string }
+        - in: query
+          name: from
+          schema: { type: string, format: date }
+        - in: query
+          name: to
+          schema: { type: string, format: date }
+        - in: query
+          name: per_page
+          schema: { type: integer, default: 50, maximum: 100 }
+      responses:
+        "200": { description: Paginated transactions }
+        "403": { description: Forbidden }
+
+  /admin/kiosks:
+    get:
+      summary: Admin — list all kiosks
+      tags: [Admin]
+      responses:
+        "200": { description: Paginated kiosks }
+
+  /admin/agents:
+    get:
+      summary: Admin — list all agents
+      tags: [Admin]
+      responses:
+        "200": { description: Paginated agents }
+
+  /admin/reports/summary:
+    get:
+      summary: Admin — aggregate report summary
+      tags: [Admin]
+      parameters:
+        - in: query
+          name: period
+          schema: { type: string, enum: [daily, weekly, monthly], default: daily }
+        - in: query
+          name: date
+          schema: { type: string, format: date }
+      responses:
+        "200": { description: Summary report }
+
+tags:
+  - name: Auth
+    description: Authentication and token management
+  - name: Transactions
+    description: Cash withdrawal transaction flow
+  - name: Dispenser
+    description: Kiosk dispenser management
+  - name: Agent
+    description: Agent deposit, rewards, and reconciliation
+  - name: Admin
+    description: Administrator management APIs

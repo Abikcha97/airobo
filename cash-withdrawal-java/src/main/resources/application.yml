@@ -1,0 +1,111 @@
+spring:
+  application:
+    name: kiosk-cash-withdrawal
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:cashwithdrawal}
+    username: ${DB_USER:cwuser}
+    password: ${DB_PASS:strong_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DB:0}
+      timeout: 5000
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# JWT
+jwt:
+  private-key-path: ${JWT_PRIVATE_KEY_PATH:/secrets/jwt_private.pem}
+  public-key-path:  ${JWT_PUBLIC_KEY_PATH:/secrets/jwt_public.pem}
+  access-token-ttl-seconds: ${JWT_ACCESS_TTL:3600}
+  refresh-token-ttl-seconds: ${JWT_REFRESH_TTL:2592000}
+
+# Payment Provider
+payment:
+  provider: ${PAYMENT_PROVIDER:oson}
+  sandbox-mode: ${PAYMENT_SANDBOX_MODE:false}
+  commission-rate: ${COMMISSION_RATE:3.0}
+  oson:
+    base-url: ${OSON_BASE_URL:https://api.oson.uz/v2}
+    api-key: ${OSON_API_KEY:}
+    service-id: ${OSON_SERVICE_ID:8947}
+    timeout: ${OSON_TIMEOUT:30}
+  paynet:
+    base-url: ${PAYNET_BASE_URL:https://api.paynet.uz/v1}
+    merchant-id: ${PAYNET_MERCHANT_ID:}
+    secret-key: ${PAYNET_SECRET_KEY:}
+    timeout: ${PAYNET_TIMEOUT:30}
+  retry:
+    max-attempts: 3
+    delays-ms: [0, 1000, 2000, 4000]
+
+# SMS Gateway
+sms:
+  gateway-url: ${SMS_GATEWAY_URL:https://notify.eskiz.uz/api}
+  token: ${SMS_GATEWAY_TOKEN:}
+
+# Dispenser
+dispenser:
+  tcp-host: ${DISPENSER_TCP_HOST:127.0.0.1}
+  tcp-port: ${DISPENSER_TCP_PORT:9000}
+  timeout-seconds: ${DISPENSER_TIMEOUT:60}
+
+# Resilience4j Circuit Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      paymentProvider:
+        sliding-window-type: TIME_BASED
+        sliding-window-size: 60
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 1
+      dispenser:
+        sliding-window-type: TIME_BASED
+        sliding-window-size: 60
+        minimum-number-of-calls: 3
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30s
+  retry:
+    instances:
+      paymentProvider:
+        max-attempts: 3
+        wait-duration: 1s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+
+# Redis TTL values (seconds)
+redis:
+  ttl:
+    otp: 180
+    session: 3600
+    refresh-token: 2592000
+    circuit-breaker: 60
+
+logging:
+  level:
+    uz.cashwithdrawal: INFO
+    org.springframework.security: WARN
