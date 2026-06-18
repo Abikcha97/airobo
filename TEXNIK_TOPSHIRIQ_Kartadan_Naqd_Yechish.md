@@ -396,6 +396,127 @@ Quyidagi masalalar biznes/moliya taraf bilan kelishilgan va tasdiqlangan:
 
 ---
 
+## 12. AGENT MUKOFOT PULI (VOZNAGRAJDENIYE)
+
+### 12.1 Umumiy tushuncha
+
+Har bir muvaffaqiyatli tranzaksiyadan agent **mukofot puli (voznagrajdeniye)** oladi.  
+Ushbu mukofot puli **har oyning yakunida**, o'tgan oyning hisob-fakturasi hisob-kitob qilingan vaqtda **agent depozitiga qaytarib to'ldiriladi**.
+
+### 12.2 Taqsimot tuzilmasi
+
+| Taraf | Foiz | Qiymat (50 000 so'm misoli) | Izoh |
+|-------|------|------------------------------|------|
+| Mijoz to'laydi | **1%** | 500 so'm | Kartadan yechiladi |
+| Agentga mukofot | **0.3%** | 300 so'm | Oylik hisob-fakturada qaytariladi |
+| ELPAY sof daromadi | **0.7%** | 200 so'm | ELPAY MCHJ da qoladi |
+
+### 12.3 Tranzaksiya vaqtidagi pul oqimi (Real-time)
+
+```
+┌──────────────┐  50 500 so'm (asosiy+komissiya)  ┌───────────────────┐
+│  MIJOZ KARTA │ ──────────────────────────────►  │  OSON PROCESSING  │
+└──────────────┘                                  └─────────┬─────────┘
+                                                            │
+                                                  50 500 so'm
+                                                            │
+                                                            ▼
+                                               ┌────────────────────────┐
+                                               │   ELPAY MCHJ HISOBI    │
+                                               │  500 so'm komissiya    │
+                                               │  (vaqtincha ushlanadi) │
+                                               └───────────┬────────────┘
+                                                           │
+                                                 50 000 so'm (asosiy summa)
+                                                           │
+                                                           ▼
+                                               ┌────────────────────────┐
+                                               │    AGENT DEPOZITI      │
+                                               │  (+50 000 so'm kirim)  │
+                                               └───────────┬────────────┘
+                                                           │ naqd pul
+                                                           ▼
+                                               ┌────────────────────────┐
+                                               │        MIJOZ           │
+                                               │  50 000 so'm naqd oladi│
+                                               └────────────────────────┘
+```
+
+### 12.4 Oylik hisob-faktura vaqtidagi pul oqimi
+
+```
+┌────────────────────────────┐
+│   ELPAY MCHJ HISOBI        │
+│  (yig'ilgan komissiyalar)  │
+│                            │
+│  500 so'm × N tranzaksiya  │
+│  = jami komissiya          │
+└────────────┬───────────────┘
+             │
+             │  Taqsimlash (oylik hisob-kitob):
+             │
+     ┌───────┴───────┐
+     │               │
+  0.3% (300 so'm)  0.7% (200 so'm)
+  agent mukofoti    ELPAY daromadi
+     │               │
+     ▼               ▼
+┌──────────────┐  ┌─────────────────┐
+│AGENT DEPOZITI│  │  ELPAY MCHJ     │
+│(mukofot kirim│  │  (sof foyda)    │
+│  bo'ladi)    │  │                 │
+└──────────────┘  └─────────────────┘
+```
+
+### 12.5 Mukofot hisoblash misoli
+
+| Tranzaksiya summasi | Mijoz komissiyasi (1%) | Agentga mukofot (0.3%) | ELPAY daromadi (0.7%) |
+|---------------------|------------------------|------------------------|----------------------|
+| 50 000 so'm | 500 so'm | **300 so'm** | **200 so'm** |
+| 500 000 so'm | 5 000 so'm | **1 500 so'm** | **3 500 so'm** |
+| 1 000 000 so'm | 10 000 so'm | **3 000 so'm** | **7 000 so'm** |
+| 5 000 000 so'm | 50 000 so'm | **15 000 so'm** | **35 000 so'm** |
+| 10 000 000 so'm | 100 000 so'm | **30 000 so'm** | **70 000 so'm** |
+
+### 12.6 Oylik mukofot hisob-fakturasi
+
+Har oyning oxirida tizim **har bir agent uchun** avtomatik ravishda quyidagilarni hisoblaydi:
+
+```
+Oylik mukofot = Σ (har bir tranzaksiya summasi × 0.3%)
+```
+
+**Hisob-fakturada ko'rsatiladigan ma'lumotlar:**
+
+| Ustun | Ma'lumot |
+|-------|----------|
+| Davr | O'tgan oy (Oy/Yil) |
+| Agent nomi | MCHJ/YaTT nomi |
+| Jami tranzaksiya soni | — |
+| Jami naqdlashtirilgan summa | — |
+| Jami yig'ilgan komissiya (1%) | — |
+| Agent mukofoti (0.3%) | — |
+| ELPAY ulushi (0.7%) | — |
+| Mukofot to'lash sanasi | Oylik yopilish sanasi |
+| To'lov holati | To'langan / Kutilmoqda |
+
+### 12.7 Backend talablari — Mukofot moduli
+
+- [ ] Har bir tranzaksiyada `agent_reward = amount × 0.003` va `elpay_income = amount × 0.007` ni alohida jadvalga yozish
+- [ ] Oylik yopilish (month-end closing) jobini yaratish
+- [ ] Oylik hisob-kitobda agent mukofotini hisoblash va depozitga kirim qilish
+- [ ] Mukofot kirim qilish tranzaksiyasi `cashout_rewards` jadvalida saqlanishi
+- [ ] Oylik hisob-faktura PDF/Excel generatsiyasi
+- [ ] Admin panelda har bir agent bo'yicha mukofot hisoboti
+
+### 12.8 Muhim qoidalar
+
+> ⚠️ **Tranzaksiya vaqtida** agentga mukofot to'lanmaydi — faqat asosiy summa depozitga kirim bo'ladi.  
+> ✅ **Oylik yopilish** (hisob-faktura hisob-kitob qilingan vaqtda) mukofot agent depozitiga qaytarib to'ldiriladi.  
+> 📊 Har bir tranzaksiya bo'yicha mukofot miqdori **real-time** hisoblanib, tizimda saqlanib boriladi.
+
+---
+
 *Hujjat tayyorlagan: ELPAY loyiha jamoasi*  
 *Versiya: 1.0 | Sana: 2026-yil iyun*  
 *Keyingi yangilanish: Bosqich 1 xulosasidan keyin*
