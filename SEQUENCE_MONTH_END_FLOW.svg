@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="972" height="944" style="background:#FAFCFF;">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1F3864"/></marker><marker id="r" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2E5797"/></marker><marker id="e" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#C62828"/></marker></defs>
+<rect x="0" y="0" width="972" height="38" fill="#1F3864"/>
+<text x="486" y="19.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Oylik Mukofot Oqimi (Month-End Flow) — Kartadan Naqd Pul Yechish | ELPAY</text>
+<rect x="28" y="152" width="916" height="152" rx="5" fill="#EBFFED" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="166.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Bosqich 1: Ma'lumot yig'ish va OSON hisob-kitob</text>
+<rect x="28" y="304" width="916" height="370" rx="5" fill="#E8F5E9" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="318.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Bosqich 2: Har bir agent uchun mukofot hisoblash va to'lash</text>
+<rect x="28" y="674" width="916" height="152" rx="5" fill="#F5EBFF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="688.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Bosqich 3: Umumiy hisobot va yakunlash</text>
+<line x1="106" y1="112" x2="106" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="296" y1="112" x2="296" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="486" y1="112" x2="486" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="676" y1="112" x2="676" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="866" y1="112" x2="866" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<rect x="36" y="58" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="106" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⏰ Oylik</text>
+<text x="106" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Cron Job</text>
+<rect x="226" y="58" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="296" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="296" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="416" y="58" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="486" y="85.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<rect x="606" y="58" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="676" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Agent</text>
+<text x="676" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Depozit DB</text>
+<rect x="796" y="58" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="866" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📄 PDF</text>
+<text x="866" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Generator</text>
+<rect x="28" y="126" width="916" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="486" y="138.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">Har oy oxirida avtomatik ishga tushadi</text>
+<line x1="106" y1="171.0" x2="290" y2="171.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="201.0" y="162.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[1] Oylik yopilish jarayonini boshlaydi</text>
+<path d="M296,197.0 L334,197.0 L334,221.0 L296,221.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="340" y="203.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[2] O'tgan oy barcha cashout</text>
+<text x="340" y="215.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">tranzaksiyalarini yig'adi</text>
+<line x1="296" y1="247.0" x2="480" y2="247.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="391.0" y="238.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[3] Hisob-faktura tasdiqlash so'rovi</text>
+<line x1="486" y1="285.0" x2="302" y2="285.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="391.0" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[4] ELPAY mukofoti (0.4%) o'tkaziladi ✅</text>
+<path d="M296,311.0 L334,311.0 L334,335.0 L296,335.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="340" y="317.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[5] Har bir agent uchun:</text>
+<text x="340" y="329.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">agent_reward = Σ(txn_summa × 0.2%)</text>
+<line x1="296" y1="361.0" x2="670" y2="361.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="486.0" y="352.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[6] Agent 1 depozitiga mukofot kirim (+0.2%)</text>
+<line x1="676" y1="399.0" x2="302" y2="399.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="486.0" y="390.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[7] Kirim tasdiqlandi ✅</text>
+<line x1="296" y1="437.0" x2="860" y2="437.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="581.0" y="428.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[8] Agent 1 hisob-fakturasini generatsiya qil</text>
+<line x1="866" y1="475.0" x2="302" y2="475.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="581.0" y="466.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[9] Agent 1 PDF tayyor 📄</text>
+<line x1="296" y1="513.0" x2="670" y2="513.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="486.0" y="504.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[10] Agent 2 depozitiga mukofot kirim (+0.2%)</text>
+<line x1="676" y1="551.0" x2="302" y2="551.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="486.0" y="542.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[11] Kirim tasdiqlandi ✅</text>
+<line x1="296" y1="589.0" x2="860" y2="589.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="581.0" y="580.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[12] Agent 2 hisob-fakturasini generatsiya qil</text>
+<line x1="866" y1="627.0" x2="302" y2="627.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="581.0" y="618.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[13] Agent 2 PDF tayyor 📄</text>
+<rect x="28" y="648" width="916" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="486" y="660.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">...  (barcha agentlar uchun takrorlanadi)  ...</text>
+<line x1="296" y1="693.0" x2="860" y2="693.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="581.0" y="678.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[14] OSON–ELPAY umumiy</text>
+<text x="581.0" y="690.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">hisobotini generatsiya qil</text>
+<line x1="866" y1="731.0" x2="302" y2="731.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="581.0" y="722.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[15] Umumiy PDF tayyor 📄</text>
+<path d="M296,757.0 L334,757.0 L334,781.0 L296,781.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="340" y="763.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[16] Mukofot tranzaksiyalarini</text>
+<text x="340" y="775.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">cashout_rewards jadvaliga yozadi</text>
+<line x1="296" y1="807.0" x2="112" y2="807.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="201.0" y="798.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[17] Oylik yopilish yakunlandi ✅</text>
+<rect x="28" y="828" width="916" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="486" y="840.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">Komissiya taqsimoti: Mijoz 1% → OSON 0.6% saqlanadi | OSON → ELPAY 0.4% qaytaradi | ELPAY → Agent 0.2% | ELPAY sof daromad 0.2%</text>
+<rect x="36" y="874" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="106" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⏰ Oylik</text>
+<text x="106" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Cron Job</text>
+<rect x="226" y="874" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="296" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="296" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="416" y="874" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="486" y="901.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<rect x="606" y="874" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="676" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Agent</text>
+<text x="676" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Depozit DB</text>
+<rect x="796" y="874" width="140" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="866" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📄 PDF</text>
+<text x="866" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Generator</text>
+</svg>

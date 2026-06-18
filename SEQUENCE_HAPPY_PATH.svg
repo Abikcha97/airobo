@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1782" style="background:#FAFCFF;">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1F3864"/></marker><marker id="r" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2E5797"/></marker><marker id="e" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#C62828"/></marker></defs>
+<rect x="0" y="0" width="1200" height="38" fill="#1F3864"/>
+<text x="600" y="19.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Asosiy Oqim (Happy Path) — Kartadan Naqd Pul Yechish | ELPAY</text>
+<rect x="28" y="126" width="1144" height="266" rx="5" fill="#EBF5FF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="140.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">1-BOSQICH: Karta ma'lumotlarini kiritish</text>
+<rect x="28" y="392" width="1144" height="418" rx="5" fill="#FFF8E6" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="406.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">2-BOSQICH: OTP yuborish va tekshirish</text>
+<rect x="28" y="810" width="1144" height="190" rx="5" fill="#EBFFED" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="824.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">3-BOSQICH: Summa kiritish</text>
+<rect x="28" y="1000" width="1144" height="500" rx="5" fill="#FFF0F0" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="1014.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">4-BOSQICH: Tranzaksiyani bajarish</text>
+<rect x="28" y="1500" width="1144" height="190" rx="5" fill="#F5EBFF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="1514.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">5-BOSQICH: Chek va naqd pul berish</text>
+<line x1="102" y1="114" x2="102" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="268" y1="114" x2="268" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="434" y1="114" x2="434" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="600" y1="114" x2="600" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="766" y1="114" x2="766" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="932" y1="114" x2="932" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="1098" y1="114" x2="1098" y2="1710" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<rect x="36" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="102" y="86.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">👤 Mijoz</text>
+<rect x="202" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="268" y="86.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Kassir</text>
+<rect x="368" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="434" y="73.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="434" y="86.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<text x="434" y="99.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">(Web/POS)</text>
+<rect x="534" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="600" y="79.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="600" y="92.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="700" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="766" y="79.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="766" y="92.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+<rect x="866" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="932" y="79.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📱 SMS</text>
+<text x="932" y="92.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Gateway</text>
+<rect x="1032" y="58" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="1098" y="79.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Agent</text>
+<text x="1098" y="92.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Depozit DB</text>
+<line x1="268" y1="145.0" x2="428" y2="145.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="351.0" y="130.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[1] "Kartadan naqd yechish"</text>
+<text x="351.0" y="142.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">xizmatini tanlaydi</text>
+<line x1="102" y1="183.0" x2="262" y2="183.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="185.0" y="174.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[2] Karta raqami va muddatini beradi</text>
+<line x1="268" y1="221.0" x2="428" y2="221.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="351.0" y="212.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[3] card_number, expiry_date kiritadi</text>
+<path d="M434,247.0 L472,247.0 L472,271.0 L434,271.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="478" y="259.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[4] Luhn tekshiruvi (frontend)</text>
+<line x1="434" y1="297.0" x2="594" y2="297.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="517.0" y="282.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[5] POST /cashout/initiate</text>
+<text x="517.0" y="294.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{card_number, expiry_date, agent_id}</text>
+<line x1="600" y1="335.0" x2="760" y2="335.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="683.0" y="326.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[6] Karta tekshiruvi so'rovi</text>
+<line x1="766" y1="373.0" x2="606" y2="373.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="683.0" y="364.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[7] {card_holder, masked_phone} ✅</text>
+<line x1="600" y1="411.0" x2="926" y2="411.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="766.0" y="396.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[8] OTP yuborish so'rovi</text>
+<text x="766.0" y="408.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{phone: masked_phone}</text>
+<line x1="932" y1="449.0" x2="108" y2="449.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="517.0" y="440.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[9] SMS OTP kodi 📲</text>
+<line x1="600" y1="487.0" x2="440" y2="487.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="517.0" y="478.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[10] {session_id, otp_sent: true}</text>
+<line x1="434" y1="525.0" x2="274" y2="525.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="351.0" y="516.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[11] "OTP yuborildi. Kodni oling"</text>
+<line x1="268" y1="563.0" x2="108" y2="563.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="185.0" y="554.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[12] SMS kodni so'raydi</text>
+<line x1="102" y1="601.0" x2="262" y2="601.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="185.0" y="592.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[13] OTP kodni beradi</text>
+<line x1="268" y1="639.0" x2="428" y2="639.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="351.0" y="630.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[14] OTP kodni kiritadi</text>
+<line x1="434" y1="677.0" x2="594" y2="677.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="517.0" y="662.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[15] POST /cashout/verify-otp</text>
+<text x="517.0" y="674.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, otp_code}</text>
+<path d="M600,703.0 L638,703.0 L638,727.0 L600,727.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="644" y="715.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[16] OTP tekshiruvi (muddati 60s)</text>
+<line x1="600" y1="753.0" x2="440" y2="753.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="517.0" y="738.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[17] {verified: true, card_holder_name,</text>
+<text x="517.0" y="750.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">available_limit} ✅</text>
+<line x1="434" y1="791.0" x2="274" y2="791.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="351.0" y="782.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[18] Karta egasi ismi va limit ko'rsatiladi</text>
+<line x1="268" y1="829.0" x2="108" y2="829.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="185.0" y="820.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[19] "Qancha summa kerak?"</text>
+<line x1="102" y1="867.0" x2="262" y2="867.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="185.0" y="858.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[20] Summa aytadi</text>
+<line x1="268" y1="905.0" x2="428" y2="905.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="351.0" y="890.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[21] Summani kiritadi</text>
+<text x="351.0" y="902.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">(50 000 – 10 000 000 so'm)</text>
+<path d="M434,931.0 L472,931.0 L472,955.0 L434,955.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="478" y="943.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[22] Komissiya hisoblanadi (summa × 1%)</text>
+<line x1="434" y1="981.0" x2="274" y2="981.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="351.0" y="966.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[23] Komissiya va jami ko'rsatiladi</text>
+<text x="351.0" y="978.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">500 000 + 5 000 = 505 000 so'm</text>
+<line x1="268" y1="1019.0" x2="428" y2="1019.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="351.0" y="1010.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[24] "To'lash" tugmasi bosiladi</text>
+<line x1="434" y1="1057.0" x2="594" y2="1057.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="517.0" y="1042.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[25] POST /cashout/execute</text>
+<text x="517.0" y="1054.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, amount, agent_id, operator_id}</text>
+<line x1="600" y1="1095.0" x2="1092" y2="1095.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="849.0" y="1086.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[26] Agent depozitini tekshiradi</text>
+<line x1="1098" y1="1133.0" x2="606" y2="1133.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="849.0" y="1124.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[27] Depozit yetarli ✅</text>
+<path d="M600,1159.0 L638,1159.0 L638,1183.0 L600,1183.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="644" y="1171.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[28] Kunlik limit tekshiruvi (≤ 30 000 000 so'm)</text>
+<line x1="600" y1="1209.0" x2="760" y2="1209.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="683.0" y="1194.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[29] Karta debit so'rovi</text>
+<text x="683.0" y="1206.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{amount + 1% komissiya}</text>
+<path d="M766,1238.0 L804,1238.0 L804,1262.0 L766,1262.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="810" y="1238.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[30] Kartadan yechadi:</text>
+<text x="810" y="1250.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• summa → ELPAY</text>
+<text x="810" y="1262.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• 1% komissiya → OSON ushlab qoladi</text>
+<line x1="766" y1="1291.0" x2="606" y2="1291.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="683.0" y="1282.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[31] {status: success, txn_id} ✅</text>
+<line x1="600" y1="1329.0" x2="1092" y2="1329.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="849.0" y="1320.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[32] Agent depozitiga kirim (+asosiy summa)</text>
+<line x1="1098" y1="1367.0" x2="606" y2="1367.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="849.0" y="1358.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[33] Depozit yangilandi ✅</text>
+<path d="M600,1393.0 L638,1393.0 L638,1417.0 L600,1417.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="644" y="1399.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[34] Mukofot yozuvi:</text>
+<text x="644" y="1411.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">agent 0.2% | ELPAY 0.2% | OSON 0.6%</text>
+<path d="M600,1431.0 L638,1431.0 L638,1455.0 L600,1455.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="644" y="1443.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[35] Audit log yoziladi</text>
+<line x1="600" y1="1481.0" x2="440" y2="1481.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="517.0" y="1466.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[36] {transaction_id, status: success,</text>
+<text x="517.0" y="1478.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">receipt_data, agent_balance_after}</text>
+<line x1="434" y1="1519.0" x2="274" y2="1519.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="351.0" y="1510.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[37] Tranzaksiya muvaffaqiyatli ✅</text>
+<path d="M434,1545.0 L472,1545.0 L472,1569.0 L434,1569.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="478" y="1557.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[38] Chek generatsiya (PDF / termal)</text>
+<line x1="434" y1="1595.0" x2="274" y2="1595.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="351.0" y="1586.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[39] Chek printerga yuboriladi 🖨️</text>
+<line x1="268" y1="1633.0" x2="108" y2="1633.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="185.0" y="1624.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[40] Naqd pulni beradi 💵</text>
+<line x1="268" y1="1671.0" x2="108" y2="1671.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="185.0" y="1662.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[41] Chekni beradi 🧾</text>
+<rect x="36" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="102" y="1738.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">👤 Mijoz</text>
+<rect x="202" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="268" y="1738.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Kassir</text>
+<rect x="368" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="434" y="1725.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="434" y="1738.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<text x="434" y="1751.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">(Web/POS)</text>
+<rect x="534" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="600" y="1731.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="600" y="1744.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="700" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="766" y="1731.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="766" y="1744.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+<rect x="866" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="932" y="1731.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📱 SMS</text>
+<text x="932" y="1744.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Gateway</text>
+<rect x="1032" y="1710" width="132" height="56" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="1098" y="1731.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Agent</text>
+<text x="1098" y="1744.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Depozit DB</text>
+</svg>
