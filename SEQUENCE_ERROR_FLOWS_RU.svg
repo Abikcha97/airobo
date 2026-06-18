@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="752" height="1262" style="background:#FAFCFF;">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1F3864"/></marker><marker id="r" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2E5797"/></marker><marker id="e" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#C62828"/></marker></defs>
+<rect x="0" y="0" width="752" height="38" fill="#1F3864"/>
+<text x="376" y="19.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Обработка ошибок (Error Flows) — Снятие наличных с карты | ELPAY</text>
+<rect x="28" y="122" width="696" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="376" y="134.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#555" text-anchor="middle" dominant-baseline="middle">❌  ОШИБКА 1: Истёкший срок карты (Frontend-валидация)</text>
+<rect x="28" y="264" width="696" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="376" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#555" text-anchor="middle" dominant-baseline="middle">❌  ОШИБКА 2: Недостаточно средств на карте</text>
+<rect x="28" y="520" width="696" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="376" y="532.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#555" text-anchor="middle" dominant-baseline="middle">❌  ОШИБКА 3: OTP введён неверно 3 раза</text>
+<rect x="28" y="738" width="696" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="376" y="750.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#555" text-anchor="middle" dominant-baseline="middle">❌  ОШИБКА 4: Депозит агента недостаточен</text>
+<rect x="28" y="956" width="696" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="376" y="968.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#555" text-anchor="middle" dominant-baseline="middle">❌  ОШИБКА 5: Превышен дневной лимит</text>
+<line x1="106" y1="110" x2="106" y2="1194" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="286" y1="110" x2="286" y2="1194" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="466" y1="110" x2="466" y2="1194" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="646" y1="110" x2="646" y2="1194" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<rect x="36" y="58" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="106" y="84.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Кассир</text>
+<rect x="216" y="58" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="286" y="77.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="286" y="90.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<rect x="396" y="58" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="466" y="77.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="466" y="90.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="576" y="58" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="646" y="77.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="646" y="90.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+<line x1="106" y1="169.0" x2="280" y2="169.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="196.0" y="154.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[1] card_number, expiry_date</text>
+<text x="196.0" y="166.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">(прошедшая дата)</text>
+<path d="M286,195.0 L324,195.0 L324,219.0 L286,219.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="330" y="207.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[2] Проверка даты (frontend)</text>
+<line x1="286" y1="245.0" x2="112" y2="245.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="196.0" y="236.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[3] "Срок действия карты истёк" ❌</text>
+<line x1="106" y1="311.0" x2="280" y2="311.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="196.0" y="302.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[4] Запрос на снятие (сумма, OTP подтверждён)</text>
+<line x1="286" y1="349.0" x2="460" y2="349.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="376.0" y="334.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[5] POST /cashout/execute</text>
+<text x="376.0" y="346.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, amount, agent_id}</text>
+<line x1="466" y1="387.0" x2="640" y2="387.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="556.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[6] Запрос на дебетование карты</text>
+<line x1="646" y1="425.0" x2="472" y2="425.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="556.0" y="416.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[7] 402 — Insufficient funds</text>
+<line x1="466" y1="463.0" x2="292" y2="463.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="376.0" y="454.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[8] "На карте недостаточно средств" ❌</text>
+<line x1="286" y1="501.0" x2="112" y2="501.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="196.0" y="492.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[9] "На карте недостаточно средств" ❌</text>
+<line x1="106" y1="567.0" x2="280" y2="567.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="196.0" y="558.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[10] Неверный OTP-код (3-я попытка)</text>
+<line x1="286" y1="605.0" x2="460" y2="605.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="376.0" y="590.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[11] POST /cashout/verify-otp</text>
+<text x="376.0" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, wrong_otp}</text>
+<path d="M466,631.0 L504,631.0 L504,655.0 L466,655.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="510" y="643.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[12] 3-я попытка — сессия блокируется</text>
+<line x1="466" y1="681.0" x2="292" y2="681.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="376.0" y="672.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[13] 401 — "Сессия заблокирована. Начните заново" ❌</text>
+<line x1="286" y1="719.0" x2="112" y2="719.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="196.0" y="710.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[14] "Сессия отменена. Попробуйте снова" ❌</text>
+<line x1="106" y1="785.0" x2="280" y2="785.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="196.0" y="776.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[15] Запрос на снятие (все проверки пройдены)</text>
+<line x1="286" y1="823.0" x2="460" y2="823.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="376.0" y="814.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[16] POST /cashout/execute</text>
+<path d="M466,849.0 L504,849.0 L504,873.0 L466,873.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="510" y="861.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[17] Проверка депозита агента</text>
+<line x1="466" y1="899.0" x2="292" y2="899.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="376.0" y="890.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[18] 503 — "Услуга временно недоступна" ❌</text>
+<line x1="286" y1="937.0" x2="112" y2="937.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="196.0" y="928.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[19] "Обратитесь к администратору" ❌</text>
+<line x1="106" y1="1003.0" x2="280" y2="1003.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="196.0" y="988.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[20] Запрос на снятие</text>
+<text x="196.0" y="1000.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">(сумма &gt; 30 000 000 сум)</text>
+<line x1="286" y1="1041.0" x2="460" y2="1041.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="376.0" y="1032.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[21] POST /cashout/execute</text>
+<path d="M466,1067.0 L504,1067.0 L504,1091.0 L466,1091.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="510" y="1079.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[22] Проверка лимита: сумма &gt; 30 000 000</text>
+<line x1="466" y1="1117.0" x2="292" y2="1117.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="376.0" y="1108.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[23] 429 — "Дневной лимит исчерпан" ❌</text>
+<line x1="286" y1="1155.0" x2="112" y2="1155.0" stroke="#C62828" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#e)"/>
+<text x="196.0" y="1146.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#C62828" text-anchor="middle" dominant-baseline="middle">[24] "Дневной лимит на сегодня исчерпан" ❌</text>
+<rect x="36" y="1194" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="106" y="1220.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Кассир</text>
+<rect x="216" y="1194" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="286" y="1213.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="286" y="1226.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<rect x="396" y="1194" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="466" y="1213.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="466" y="1226.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="576" y="1194" width="140" height="52" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="646" y="1213.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="646" y="1226.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+</svg>

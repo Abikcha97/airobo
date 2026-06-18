@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1004" height="944" style="background:#FAFCFF;">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1F3864"/></marker><marker id="r" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2E5797"/></marker><marker id="e" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#C62828"/></marker></defs>
+<rect x="0" y="0" width="1004" height="38" fill="#1F3864"/>
+<text x="502" y="19.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Ежемесячный поток вознаграждений (Month-End Flow) — Снятие наличных с карты | ELPAY</text>
+<rect x="28" y="152" width="948" height="152" rx="5" fill="#EBFFED" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="166.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Шаг 1: Сбор данных и расчёт с OSON</text>
+<rect x="28" y="304" width="948" height="370" rx="5" fill="#E8F5E9" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="318.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Шаг 2: Расчёт и выплата вознаграждения каждому агенту</text>
+<rect x="28" y="674" width="948" height="152" rx="5" fill="#F5EBFF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="38" y="688.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="bold" fill="#555" text-anchor="start" dominant-baseline="middle">Шаг 3: Сводный отчёт и завершение</text>
+<line x1="110" y1="112" x2="110" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="306" y1="112" x2="306" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="502" y1="112" x2="502" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="698" y1="112" x2="698" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="894" y1="112" x2="894" y2="874" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<rect x="36" y="58" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="110" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⏰ Ежемесячный</text>
+<text x="110" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Cron Job</text>
+<rect x="232" y="58" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="306" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="306" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="428" y="58" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="502" y="85.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<rect x="624" y="58" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="698" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Депозит</text>
+<text x="698" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Агента DB</text>
+<rect x="820" y="58" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="894" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📄 PDF</text>
+<text x="894" y="91.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Generator</text>
+<rect x="28" y="126" width="948" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="502" y="138.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">Запускается автоматически в конце каждого месяца</text>
+<line x1="110" y1="171.0" x2="300" y2="171.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="208.0" y="162.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[1] Инициирует процесс ежемесячного закрытия</text>
+<path d="M306,197.0 L344,197.0 L344,221.0 L306,221.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="350" y="203.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[2] Собирает все cashout-транзакции</text>
+<text x="350" y="215.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">за прошедший месяц</text>
+<line x1="306" y1="247.0" x2="496" y2="247.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="404.0" y="238.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[3] Запрос на подтверждение счёта-фактуры</text>
+<line x1="502" y1="285.0" x2="312" y2="285.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="404.0" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[4] Вознаграждение ELPAY (0.4%) перечислено ✅</text>
+<path d="M306,311.0 L344,311.0 L344,335.0 L306,335.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="350" y="317.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[5] Для каждого агента:</text>
+<text x="350" y="329.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">agent_reward = Σ(сумма_транзакции × 0.2%)</text>
+<line x1="306" y1="361.0" x2="692" y2="361.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="502.0" y="352.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[6] Зачисление вознаграждения агенту 1 (+0.2%)</text>
+<line x1="698" y1="399.0" x2="312" y2="399.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="502.0" y="390.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[7] Зачисление подтверждено ✅</text>
+<line x1="306" y1="437.0" x2="888" y2="437.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="600.0" y="428.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[8] Сгенерировать счёт-фактуру агента 1</text>
+<line x1="894" y1="475.0" x2="312" y2="475.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="600.0" y="466.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[9] PDF агента 1 готов 📄</text>
+<line x1="306" y1="513.0" x2="692" y2="513.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="502.0" y="504.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[10] Зачисление вознаграждения агенту 2 (+0.2%)</text>
+<line x1="698" y1="551.0" x2="312" y2="551.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="502.0" y="542.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[11] Зачисление подтверждено ✅</text>
+<line x1="306" y1="589.0" x2="888" y2="589.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="600.0" y="580.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[12] Сгенерировать счёт-фактуру агента 2</text>
+<line x1="894" y1="627.0" x2="312" y2="627.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="600.0" y="618.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[13] PDF агента 2 готов 📄</text>
+<rect x="28" y="648" width="948" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="502" y="660.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">...  (повторяется для всех агентов)  ...</text>
+<line x1="306" y1="693.0" x2="888" y2="693.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="600.0" y="678.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[14] Сгенерировать сводный отчёт</text>
+<text x="600.0" y="690.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">OSON–ELPAY</text>
+<line x1="894" y1="731.0" x2="312" y2="731.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="600.0" y="722.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[15] Сводный PDF готов 📄</text>
+<path d="M306,757.0 L344,757.0 L344,781.0 L306,781.0" fill="none" stroke="#1F3864" stroke-width="1.6" stroke-dasharray="none" marker-end="url(#a)"/>
+<text x="350" y="763.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[16] Сохраняет транзакции вознаграждений</text>
+<text x="350" y="775.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">в таблицу cashout_rewards</text>
+<line x1="306" y1="807.0" x2="116" y2="807.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#r)"/>
+<text x="208.0" y="798.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[17] Ежемесячное закрытие завершено ✅</text>
+<rect x="28" y="828" width="948" height="24" rx="3" fill="#FFFDE7" stroke="#F9A825" stroke-width="1"/>
+<text x="502" y="840.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" fill="#555" text-anchor="middle" dominant-baseline="middle">Распределение: Клиент 1% → OSON удерживает 0.6% | OSON → ELPAY 0.4% | ELPAY → Агент 0.2% | ELPAY чистый доход 0.2%</text>
+<rect x="36" y="874" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="110" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⏰ Ежемесячный</text>
+<text x="110" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Cron Job</text>
+<rect x="232" y="874" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="306" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="306" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="428" y="874" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="502" y="901.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<rect x="624" y="874" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="698" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">🗄️ Депозит</text>
+<text x="698" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Агента DB</text>
+<rect x="820" y="874" width="148" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="894" y="894.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">📄 PDF</text>
+<text x="894" y="907.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">Generator</text>
+</svg>
