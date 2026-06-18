@@ -132,8 +132,10 @@ GET /api/v1/cashout/receipt/{transaction_id}
    - Agent depozitida yetarli naqd mablag' bormi? *(agent mijozga naqd pul berishi kerak)*
    - Kunlik / oylik limit (compliance bo'yicha)
 4. **Tranzaksiya bajarish:**
-   - Kartadan `summa + komissiya` yechish
-   - Agent depozitiga `summa` kirim qilish (komissiya ELPAY da qoladi)
+   - Kartadan `summa + 1% komissiya` yechish (OSON orqali)
+   - OSON 1% komissiyani o'zida ushlab qoladi (0.6% — sof daromadi)
+   - Agent depozitiga faqat **asosiy summa** kirim qilinadi
+   - OSON ning 0.4% ELPAY ga mukofoti va ELPAY ning 0.2% Agent mukofoti — **oylik hisob-kitobda** to'lanadi
 5. **Chek generatsiya**
 6. **Audit log yozish**
 
@@ -141,48 +143,101 @@ GET /api/v1/cashout/receipt/{transaction_id}
 
 ## 4. MOLIYAVIY HISOB-KITOB (FINANCE FLOW)
 
-### 4.1 Pul oqimi sxemasi
+### 4.1 Ishtirokchilar tuzilmasi
+
+Ushbu xizmatda **3 darajali** agentlik tizimi mavjud:
 
 ```
-┌─────────────┐     summa + komissiya    ┌──────────────────┐
-│  MIJOZ KARTA │ ───────────────────────► │  ELPAY PROCESSING │
-└─────────────┘                          └──────────┬───────┘
-                                                    │
-                                      summa (komissiyasiz)
-                                                    │
-                                                    ▼
-┌──────────────────────────────────────────────────────────┐
-│              ELPAY MCHJ HISOB RAQAMI                     │
-│  (komissiya bu yerda qoladi — ELPAY daromadi)            │
-└──────────────────────────────────────────────────────────┘
-                                                    │
-                                              summa kirim
-                                                    │
-                                                    ▼
-┌─────────────────────┐    naqd pul beradi  ┌──────────────┐
-│  AGENT DEPOZITI     │ ◄─────────────────  │              │
-│  (depozit ko'payadi)│                     │   KASSIR /   │
-└─────────────────────┘                     │    AGENT     │
-                                            └──────┬───────┘
-                                                   │ naqd pul
-                                                   ▼
-                                           ┌──────────────┐
-                                           │    MIJOZ     │
-                                           └──────────────┘
+OSON (Processing markazi va Komissiya egasi)
+  └── ELPAY MCHJ  (OSON ning agenti)
+        └── ELPAY Agentlari  (ELPAY ning agentlari — kassirlar)
 ```
 
-### 4.2 Komissiya tuzilmasi
+> ELPAY ham o'zi OSON uchun **agent** hisoblanadi. Shuning uchun OSON 1% komissiyani yig'ib, ELPAY ga o'z mukofotini (0.4%) qaytaradi. ELPAY esa bundan o'z agentlariga (0.2%) mukofot beradi.
 
-*(Backend va Biznes taraf birgalikda aniqlaydi)*
+---
 
-| Parametr | Tavsif |
-|----------|--------|
-| Komissiya % | Tranzaksiya summasidan foiz (masalan: 1.5%) |
-| Minimal komissiya | Masalan: 5,000 so'm |
-| Maksimal komissiya | Masalan: 50,000 so'm |
-| Kim to'laydi | Mijoz (kartadan yechiladi: summa + komissiya) |
-| Kim oladi | ELPAY MCHJ |
-| Agentga ta'sir | Faqat summa kirim, komissiya emas |
+### 4.2 Tranzaksiya vaqtidagi real-time pul oqimi
+
+```
+┌──────────────┐
+│  MIJOZ KARTA │  summa + 1% komissiya
+│              │  (masalan: 50 000 + 500 = 50 500 so'm)
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────────────────────┐
+│           OSON PROCESSING                    │
+│  Barcha 1% komissiya (500 so'm) OSON ga kirim│
+│  OSON 0.6% o'zida ushlab qoladi              │
+│  OSON ELPAYga 0.4% mukofot qaytaradi (oylik) │
+└──────────────────┬───────────────────────────┘
+                   │
+         asosiy summa (50 000 so'm)
+                   │
+                   ▼
+┌──────────────────────────────────────────────┐
+│           ELPAY MCHJ HISOBI                  │
+│  Asosiy summa tranzit orqali agentga o'tadi  │
+└──────────────────┬───────────────────────────┘
+                   │
+         50 000 so'm (asosiy summa)
+                   │
+                   ▼
+┌──────────────────────────────────────────────┐
+│           ELPAY AGENT DEPOZITI               │
+│  (+50 000 so'm kirim bo'ladi)                │
+└──────────────────┬───────────────────────────┘
+                   │ naqd pul beradi
+                   ▼
+            ┌─────────────┐
+            │    MIJOZ    │
+            │ 50 000 so'm │
+            │ naqd oladi  │
+            └─────────────┘
+```
+
+---
+
+### 4.3 Komissiya taqsimoti (1% = 500 so'm, 50 000 so'm misoli)
+
+| Taraf | Foiz | Summa | Qachon | Izoh |
+|-------|------|-------|--------|------|
+| **Mijoz** to'laydi | **1.0%** | 500 so'm | Tranzaksiya vaqtida | Kartadan yechiladi |
+| **OSON** ushlab qoladi | **0.6%** | 300 so'm | Tranzaksiya vaqtida | OSON ning sof daromadi |
+| **OSON → ELPAY** mukofot | **0.4%** | 200 so'm | Oylik hisob-kitobda | ELPAY uchun mukofot (OSON ning agenti sifatida) |
+| **ELPAY → Agent** mukofot | **0.2%** | 100 so'm | Oylik hisob-kitobda | ELPAY agentiga mukofot |
+| **ELPAY** sof daromadi | **0.2%** | 100 so'm | Oylik hisob-kitobdan keyin | 0.4% − 0.2% = 0.2% |
+
+---
+
+### 4.4 Oylik mukofot qaytarish oqimi
+
+```
+OSON  ──(0.4% mukofot)──►  ELPAY MCHJ HISOBI
+                                    │
+                          ┌─────────┴──────────┐
+                          │                    │
+                  0.2% agent mukofoti    0.2% ELPAY sof daromadi
+                          │                    │
+                          ▼                    ▼
+                  AGENT DEPOZITI        ELPAY MCHJ
+                  (mukofot kirim)       (sof foyda)
+```
+
+---
+
+### 4.5 To'liq hisoblash misollari
+
+| Tranzaksiya summasi | Mijoz to'laydi (1%) | OSON ushlab qoladi (0.6%) | ELPAY ga keladi (0.4%) | ELPAY agentiga (0.2%) | ELPAY sof daromadi (0.2%) |
+|---------------------|---------------------|---------------------------|------------------------|-----------------------|---------------------------|
+| 50 000 so'm | **500 so'm** | 300 so'm | 200 so'm | **100 so'm** | **100 so'm** |
+| 500 000 so'm | **5 000 so'm** | 3 000 so'm | 2 000 so'm | **1 000 so'm** | **1 000 so'm** |
+| 1 000 000 so'm | **10 000 so'm** | 6 000 so'm | 4 000 so'm | **2 000 so'm** | **2 000 so'm** |
+| 5 000 000 so'm | **50 000 so'm** | 30 000 so'm | 20 000 so'm | **10 000 so'm** | **10 000 so'm** |
+| 10 000 000 so'm | **100 000 so'm** | 60 000 so'm | 40 000 so'm | **20 000 so'm** | **20 000 so'm** |
+
+> **Eslatma:** OSON → ELPAY va ELPAY → Agent mukofotlari **tranzaksiya vaqtida emas**, oylik hisob-faktura yopilganda to'lanadi.
 
 ---
 
@@ -370,150 +425,127 @@ Quyidagi masalalar biznes/moliya taraf bilan kelishilgan va tasdiqlangan:
 
 | # | Masala | Qaror |
 |---|--------|-------|
-| 1 | **Komissiya foizi** | **1%** (tranzaksiya summasidan) |
-| 2 | **Kunlik limit — mijoz uchun** | **30 000 000 so'm** |
-| 3 | **Kunlik/oylik limit — agent uchun** | **Cheksiz** |
-| 4 | **Processing markazi** | **OSON to'lov tizimi** — integratsiya va API hujjatlari mavjud |
-| 5 | **SMS Gateway / OTP** | **OSON integrator** tomonidan hal qilinadi |
-| 6 | **OTP yuborish narxi** | **OSON integrator** tomonidan hal qilinadi |
-| 7 | **Qo'llab-quvvatlanadigan karta turlari** | **UzCard, Humo, UzCard-Visa** |
-| 8 | **Minimal yechish summasi** | **50 000 so'm** |
-| 9 | **Maksimal yechish summasi** | **10 000 000 so'm** |
-| 10 | **Agent depoziti yetarli bo'lmaganda** | Tranzaksiya **rad etiladi** |
-| 11 | **Termal chek kengligi** | **57mm va 80mm** — ikkalasi ham qo'llab-quvvatlanadi |
-| 12 | **Dalolatnomani imzolash** | **Elektron imzo** |
-
-### Komissiya hisoblash misoli:
-
-| Tranzaksiya summasi | Komissiya (1%) | Kartadan jami yechiladi | Agent depozitiga kirim |
-|---------------------|----------------|-------------------------|------------------------|
-| 50 000 so'm | 500 so'm | 50 500 so'm | 50 000 so'm |
-| 500 000 so'm | 5 000 so'm | 505 000 so'm | 500 000 so'm |
-| 5 000 000 so'm | 50 000 so'm | 5 050 000 so'm | 5 000 000 so'm |
-| 10 000 000 so'm | 100 000 so'm | 10 100 000 so'm | 10 000 000 so'm |
-
-> **Eslatma:** Komissiya **mijoz** tomonidan to'lanadi (kartadan yechiladi). Agent depozitiga faqat asosiy summa kirim bo'ladi. Komissiya ELPAY MCHJ daromadi hisoblanadi.
+| 1 | **Mijoz komissiyasi** | **1%** (tranzaksiya summasidan, OSON oladi) |
+| 2 | **ELPAY ga qaytariladigan mukofot (OSON dan)** | **0.4%** (oylik hisob-kitobda) |
+| 3 | **ELPAY agentiga mukofot** | **0.2%** (oylik hisob-kitobda) |
+| 4 | **ELPAY sof daromadi** | **0.2%** (0.4% − 0.2%) |
+| 5 | **OSON sof daromadi** | **0.6%** (1% − 0.4%) |
+| 6 | **Kunlik limit — mijoz uchun** | **30 000 000 so'm** |
+| 7 | **Kunlik/oylik limit — agent uchun** | **Cheksiz** |
+| 8 | **Processing markazi** | **OSON to'lov tizimi** — integratsiya va API hujjatlari mavjud |
+| 9 | **SMS Gateway / OTP** | **OSON integrator** tomonidan hal qilinadi |
+| 10 | **Qo'llab-quvvatlanadigan karta turlari** | **UzCard, Humo, UzCard-Visa** |
+| 11 | **Minimal yechish summasi** | **50 000 so'm** |
+| 12 | **Maksimal yechish summasi** | **10 000 000 so'm** |
+| 13 | **Agent depoziti yetarli bo'lmaganda** | Tranzaksiya **rad etiladi** |
+| 14 | **Termal chek kengligi** | **57mm va 80mm** — ikkalasi ham qo'llab-quvvatlanadi |
+| 15 | **Dalolatnomani imzolash** | **Elektron imzo** |
 
 ---
 
 ## 12. AGENT MUKOFOT PULI (VOZNAGRAJDENIYE)
 
-### 12.1 Umumiy tushuncha
-
-Har bir muvaffaqiyatli tranzaksiyadan agent **mukofot puli (voznagrajdeniye)** oladi.  
-Ushbu mukofot puli **har oyning yakunida**, o'tgan oyning hisob-fakturasi hisob-kitob qilingan vaqtda **agent depozitiga qaytarib to'ldiriladi**.
-
-### 12.2 Taqsimot tuzilmasi
-
-| Taraf | Foiz | Qiymat (50 000 so'm misoli) | Izoh |
-|-------|------|------------------------------|------|
-| Mijoz to'laydi | **1%** | 500 so'm | Kartadan yechiladi |
-| Agentga mukofot | **0.3%** | 300 so'm | Oylik hisob-fakturada qaytariladi |
-| ELPAY sof daromadi | **0.7%** | 200 so'm | ELPAY MCHJ da qoladi |
-
-### 12.3 Tranzaksiya vaqtidagi pul oqimi (Real-time)
+### 12.1 Umumiy tushuncha — 3 darajali agentlik tizimi
 
 ```
-┌──────────────┐  50 500 so'm (asosiy+komissiya)  ┌───────────────────┐
-│  MIJOZ KARTA │ ──────────────────────────────►  │  OSON PROCESSING  │
-└──────────────┘                                  └─────────┬─────────┘
-                                                            │
-                                                  50 500 so'm
-                                                            │
-                                                            ▼
-                                               ┌────────────────────────┐
-                                               │   ELPAY MCHJ HISOBI    │
-                                               │  500 so'm komissiya    │
-                                               │  (vaqtincha ushlanadi) │
-                                               └───────────┬────────────┘
-                                                           │
-                                                 50 000 so'm (asosiy summa)
-                                                           │
-                                                           ▼
-                                               ┌────────────────────────┐
-                                               │    AGENT DEPOZITI      │
-                                               │  (+50 000 so'm kirim)  │
-                                               └───────────┬────────────┘
-                                                           │ naqd pul
-                                                           ▼
-                                               ┌────────────────────────┐
-                                               │        MIJOZ           │
-                                               │  50 000 so'm naqd oladi│
-                                               └────────────────────────┘
+OSON  (1% komissiya yig'adi, 0.6% o'zida qoladi, 0.4% ELPAYga qaytaradi)
+  └── ELPAY MCHJ  (0.4% oladi, 0.2% agentiga beradi, 0.2% o'zida qoladi)
+        └── ELPAY Agenti  (0.2% mukofot oladi — oylik)
 ```
 
-### 12.4 Oylik hisob-faktura vaqtidagi pul oqimi
+Mukofot pullar **tranzaksiya vaqtida emas**, **har oyning oxirida** hisob-faktura yopilganda to'lanadi.
 
+---
+
+### 12.2 Oylik mukofot to'lash jarayoni
+
+**1-qadam:** OSON oyni yopadi → ELPAY ga 0.4% mukofot to'laydi  
+**2-qadam:** ELPAY oyni yopadi → Har bir agentga 0.2% mukofot depozitiga kirim qiladi  
+**3-qadam:** ELPAY da 0.2% sof daromad qoladi
+
+---
+
+### 12.3 Mukofot hisoblash misoli (50 000 so'm tranzaksiya)
+
+| Taraf | Foiz | Summa | Vaqt | Izoh |
+|-------|------|-------|------|------|
+| **Mijoz** to'laydi | 1.0% | **500 so'm** | Tranzaksiya vaqtida | Kartadan yechiladi |
+| **OSON** ushlab qoladi | 0.6% | **300 so'm** | Tranzaksiya vaqtida | OSON sof daromadi |
+| **OSON → ELPAY** mukofot | 0.4% | **200 so'm** | Oylik hisob-kitobda | ELPAY ning OSON dagi mukofoti |
+| **ELPAY → Agent** mukofot | 0.2% | **100 so'm** | Oylik hisob-kitobda | Agent depozitiga kirim |
+| **ELPAY** sof daromadi | 0.2% | **100 so'm** | Oylik yopilishdan so'ng | ELPAY MCHJ sof foyda |
+
+---
+
+### 12.4 Katta summalar uchun hisoblash jadvali
+
+| Tranzaksiya summasi | Mijoz (1%) | OSON (0.6%) | ELPAY ga (0.4%) | Agent mukofoti (0.2%) | ELPAY sof (0.2%) |
+|---------------------|------------|-------------|-----------------|-----------------------|------------------|
+| 50 000 so'm | **500** | 300 | 200 | **100 so'm** | **100 so'm** |
+| 500 000 so'm | **5 000** | 3 000 | 2 000 | **1 000 so'm** | **1 000 so'm** |
+| 1 000 000 so'm | **10 000** | 6 000 | 4 000 | **2 000 so'm** | **2 000 so'm** |
+| 5 000 000 so'm | **50 000** | 30 000 | 20 000 | **10 000 so'm** | **10 000 so'm** |
+| 10 000 000 so'm | **100 000** | 60 000 | 40 000 | **20 000 so'm** | **20 000 so'm** |
+
+---
+
+### 12.5 Oylik hisob-faktura tuzilmasi
+
+Har oyning oxirida tizim **ikki xil hisob-faktura** generatsiya qiladi:
+
+#### A) OSON → ELPAY hisob-fakturasi
 ```
-┌────────────────────────────┐
-│   ELPAY MCHJ HISOBI        │
-│  (yig'ilgan komissiyalar)  │
-│                            │
-│  500 so'm × N tranzaksiya  │
-│  = jami komissiya          │
-└────────────┬───────────────┘
-             │
-             │  Taqsimlash (oylik hisob-kitob):
-             │
-     ┌───────┴───────┐
-     │               │
-  0.3% (300 so'm)  0.7% (200 so'm)
-  agent mukofoti    ELPAY daromadi
-     │               │
-     ▼               ▼
-┌──────────────┐  ┌─────────────────┐
-│AGENT DEPOZITI│  │  ELPAY MCHJ     │
-│(mukofot kirim│  │  (sof foyda)    │
-│  bo'ladi)    │  │                 │
-└──────────────┘  └─────────────────┘
+Oylik mukofot = Σ (har bir tranzaksiya summasi × 0.4%)
 ```
-
-### 12.5 Mukofot hisoblash misoli
-
-| Tranzaksiya summasi | Mijoz komissiyasi (1%) | Agentga mukofot (0.3%) | ELPAY daromadi (0.7%) |
-|---------------------|------------------------|------------------------|----------------------|
-| 50 000 so'm | 500 so'm | **300 so'm** | **200 so'm** |
-| 500 000 so'm | 5 000 so'm | **1 500 so'm** | **3 500 so'm** |
-| 1 000 000 so'm | 10 000 so'm | **3 000 so'm** | **7 000 so'm** |
-| 5 000 000 so'm | 50 000 so'm | **15 000 so'm** | **35 000 so'm** |
-| 10 000 000 so'm | 100 000 so'm | **30 000 so'm** | **70 000 so'm** |
-
-### 12.6 Oylik mukofot hisob-fakturasi
-
-Har oyning oxirida tizim **har bir agent uchun** avtomatik ravishda quyidagilarni hisoblaydi:
-
-```
-Oylik mukofot = Σ (har bir tranzaksiya summasi × 0.3%)
-```
-
-**Hisob-fakturada ko'rsatiladigan ma'lumotlar:**
 
 | Ustun | Ma'lumot |
 |-------|----------|
-| Davr | O'tgan oy (Oy/Yil) |
+| Davr | O'tgan oy |
+| Jami tranzaksiya soni | — |
+| Jami naqdlashtirilgan summa | — |
+| Jami komissiya (1%) | — |
+| ELPAY ga mukofot (0.4%) | — |
+| OSON sof daromad (0.6%) | — |
+
+#### B) ELPAY → Har bir Agent hisob-fakturasi
+```
+Agent oylik mukofoti = Σ (ushbu agent tranzaksiyalari summasi × 0.2%)
+```
+
+| Ustun | Ma'lumot |
+|-------|----------|
+| Davr | O'tgan oy |
 | Agent nomi | MCHJ/YaTT nomi |
 | Jami tranzaksiya soni | — |
 | Jami naqdlashtirilgan summa | — |
-| Jami yig'ilgan komissiya (1%) | — |
-| Agent mukofoti (0.3%) | — |
-| ELPAY ulushi (0.7%) | — |
-| Mukofot to'lash sanasi | Oylik yopilish sanasi |
+| Agent mukofoti (0.2%) | — |
+| To'lov sanasi | Oylik yopilish sanasi |
 | To'lov holati | To'langan / Kutilmoqda |
 
-### 12.7 Backend talablari — Mukofot moduli
+---
 
-- [ ] Har bir tranzaksiyada `agent_reward = amount × 0.003` va `elpay_income = amount × 0.007` ni alohida jadvalga yozish
-- [ ] Oylik yopilish (month-end closing) jobini yaratish
-- [ ] Oylik hisob-kitobda agent mukofotini hisoblash va depozitga kirim qilish
-- [ ] Mukofot kirim qilish tranzaksiyasi `cashout_rewards` jadvalida saqlanishi
-- [ ] Oylik hisob-faktura PDF/Excel generatsiyasi
-- [ ] Admin panelda har bir agent bo'yicha mukofot hisoboti
+### 12.6 Backend talablari — Mukofot moduli
 
-### 12.8 Muhim qoidalar
+- [ ] Har bir tranzaksiyada quyidagilarni alohida jadvalga yozish:
+  - `oson_share = amount × 0.006` (OSON sof daromadi)
+  - `elpay_reward_from_oson = amount × 0.004` (ELPAY ga keladi)
+  - `agent_reward = amount × 0.002` (agentga qaytariladi)
+  - `elpay_net_income = amount × 0.002` (ELPAY sof daromadi)
+- [ ] Oylik yopilish jarayoni (month-end closing job):
+  1. OSON dan ELPAY ga 0.4% mukofot kirim qilish
+  2. ELPAY dan har bir agentga 0.2% mukofot depozitga kirim qilish
+- [ ] Mukofot tranzaksiyalari `cashout_rewards` jadvalida saqlanishi
+- [ ] Admin panelda: OSON → ELPAY va ELPAY → Agent bo'yicha hisobotlar
+- [ ] Oylik hisob-faktura PDF/Excel generatsiyasi (ikkala tur uchun)
 
-> ⚠️ **Tranzaksiya vaqtida** agentga mukofot to'lanmaydi — faqat asosiy summa depozitga kirim bo'ladi.  
-> ✅ **Oylik yopilish** (hisob-faktura hisob-kitob qilingan vaqtda) mukofot agent depozitiga qaytarib to'ldiriladi.  
-> 📊 Har bir tranzaksiya bo'yicha mukofot miqdori **real-time** hisoblanib, tizimda saqlanib boriladi.
+---
+
+### 12.7 Muhim qoidalar
+
+> ⚠️ **Tranzaksiya vaqtida:** Faqat asosiy summa agent depozitiga kirim bo'ladi. Mukofot pul hali to'lanmaydi.  
+> ✅ **Oylik yopilishda:** OSON → ELPAY (0.4%), keyin ELPAY → Agent (0.2%) ketma-ket to'lanadi.  
+> 📊 Har bir tranzaksiyaning mukofot ulushi real-time hisoblanib, `cashout_rewards` jadvalida saqlanadi.  
+> 🔗 ELPAY ham OSON uchun **agent** hisoblanadi — shuning uchun ikkala darajadagi mukofot tizimi parallel ishlaydi.
 
 ---
 
