@@ -364,20 +364,35 @@ Xizmat tugallangan hisoblanadi, quyidagilar bajarilganda:
 
 ---
 
-## 11. OCHIQ SAVOLLAR (Clarifications Needed)
+## 11. ANIQLANГАН PARAMETRLAR
 
-Dasturchilar va muhandislar quyidagi masalalarni biznes/moliya taraf bilan aniqlashtirishi kerak:
+Quyidagi masalalar biznes/moliya taraf bilan kelishilgan va tasdiqlangan:
 
-1. **Komissiya foizi va chegaralari** — necha foiz? Minimal/maksimal summa?
-2. **Kunlik/oylik limit** — bir mijoz uchun, bir agent uchun?
-3. **Processing markazi** — qaysi bank/processing bilan integratsiya? API hujjatlari mavjudmi?
-4. **SMS Gateway** — qaysi provider (Eskiz, Playmobile va h.k.)?
-5. **Karta turlari** — faqat UzCard va Humo yoki xalqaro kartalar ham?
-6. **OTP yuborish narxi** — kim to'laydi (ELPAY yoki agent)?
-7. **Minimal/maksimal yechish summasi** — chegara bormi?
-8. **Mablag' yetishmaganida agent depoziti** — nima bo'ladi? Tranzaksiya rad etiladimi?
-9. **Chek formati** — termal printer uchun kenglik (57mm/80mm)?
-10. **Dalolatnomani imzolash jarayoni** — elektron yoki qo'lda?
+| # | Masala | Qaror |
+|---|--------|-------|
+| 1 | **Komissiya foizi** | **1%** (tranzaksiya summasidan) |
+| 2 | **Kunlik limit — mijoz uchun** | **30 000 000 so'm** |
+| 3 | **Kunlik/oylik limit — agent uchun** | **Cheksiz** |
+| 4 | **Processing markazi** | **OSON to'lov tizimi** — integratsiya va API hujjatlari mavjud |
+| 5 | **SMS Gateway / OTP** | **OSON integrator** tomonidan hal qilinadi |
+| 6 | **OTP yuborish narxi** | **OSON integrator** tomonidan hal qilinadi |
+| 7 | **Qo'llab-quvvatlanadigan karta turlari** | **UzCard, Humo, UzCard-Visa** |
+| 8 | **Minimal yechish summasi** | **50 000 so'm** |
+| 9 | **Maksimal yechish summasi** | **10 000 000 so'm** |
+| 10 | **Agent depoziti yetarli bo'lmaganda** | Tranzaksiya **rad etiladi** |
+| 11 | **Termal chek kengligi** | **57mm va 80mm** — ikkalasi ham qo'llab-quvvatlanadi |
+| 12 | **Dalolatnomani imzolash** | **Elektron imzo** |
+
+### Komissiya hisoblash misoli:
+
+| Tranzaksiya summasi | Komissiya (1%) | Kartadan jami yechiladi | Agent depozitiga kirim |
+|---------------------|----------------|-------------------------|------------------------|
+| 50 000 so'm | 500 so'm | 50 500 so'm | 50 000 so'm |
+| 500 000 so'm | 5 000 so'm | 505 000 so'm | 500 000 so'm |
+| 5 000 000 so'm | 50 000 so'm | 5 050 000 so'm | 5 000 000 so'm |
+| 10 000 000 so'm | 100 000 so'm | 10 100 000 so'm | 10 000 000 so'm |
+
+> **Eslatma:** Komissiya **mijoz** tomonidan to'lanadi (kartadan yechiladi). Agent depozitiga faqat asosiy summa kirim bo'ladi. Komissiya ELPAY MCHJ daromadi hisoblanadi.
 
 ---
 
