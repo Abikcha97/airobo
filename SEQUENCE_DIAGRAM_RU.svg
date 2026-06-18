@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1253" height="1870" style="background:#FAFCFF;font-family:Arial, Helvetica, sans-serif;">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1F3864"/></marker><marker id="arr_ret" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2E5797"/></marker></defs>
+<rect x="0" y="0" width="1253" height="36" fill="#1F3864"/><text x="626" y="22" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Диаграмма последовательности — Снятие наличных с карты (ELPAY)</text>
+<rect x="30" y="94" width="1193" height="278" rx="6" fill="#EBF5FF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="40" y="110" font-size="10" font-weight="bold" fill="#444" font-family="Arial, Helvetica, sans-serif">ЭТАП 1: Ввод данных карты</text>
+<rect x="30" y="372" width="1193" height="438" rx="6" fill="#FFF8E6" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="40" y="388" font-size="10" font-weight="bold" fill="#444" font-family="Arial, Helvetica, sans-serif">ЭТАП 2: Отправка и проверка OTP</text>
+<rect x="30" y="810" width="1193" height="202" rx="6" fill="#EBFFED" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="40" y="826" font-size="10" font-weight="bold" fill="#444" font-family="Arial, Helvetica, sans-serif">ЭТАП 3: Ввод суммы</text>
+<rect x="30" y="1012" width="1193" height="564" rx="6" fill="#FFF0F0" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="40" y="1028" font-size="10" font-weight="bold" fill="#444" font-family="Arial, Helvetica, sans-serif">ЭТАП 4: Выполнение транзакции</text>
+<rect x="30" y="1576" width="1193" height="190" rx="6" fill="#F5EBFF" stroke="#A0B4D0" stroke-width="1" opacity="0.65"/>
+<text x="40" y="1592" font-size="10" font-weight="bold" fill="#444" font-family="Arial, Helvetica, sans-serif">ЭТАП 5: Чек и выдача наличных</text>
+<line x1="107" y1="110" x2="107" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="280" y1="110" x2="280" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="453" y1="110" x2="453" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="626" y1="110" x2="626" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="799" y1="110" x2="799" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="972" y1="110" x2="972" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="1145" y1="110" x2="1145" y2="1796" stroke="#A0B4D0" stroke-width="1.5" stroke-dasharray="4,4"/>
+<rect x="40" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="107" y="83.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">👤 Клиент</text>
+<rect x="213" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="280" y="83.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Кассир</text>
+<rect x="386" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="453" y="76.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="453" y="89.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<rect x="559" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="626" y="76.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="626" y="89.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="732" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="799" y="76.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="799" y="89.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+<rect x="905" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="972" y="76.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">📱 SMS</text>
+<text x="972" y="89.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Gateway</text>
+<rect x="1078" y="56" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="1145" y="76.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🗄️ Депозит</text>
+<text x="1145" y="89.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Агента DB</text>
+<line x1="280" y1="115.0" x2="447" y2="115.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="366.5" y="100.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[1] Выбирает услугу</text>
+<text x="366.5" y="112.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">"Снятие наличных с карты"</text>
+<line x1="107" y1="157.0" x2="274" y2="157.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="193.5" y="142.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[2] Передаёт номер карты</text>
+<text x="193.5" y="154.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">и срок действия</text>
+<line x1="280" y1="197.0" x2="447" y2="197.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="366.5" y="188.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[3] Вводит card_number, expiry_date</text>
+<path d="M453,223.0 L495,223.0 L495,247.0 L453,247.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="501" y="235.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[4] Проверка карты (алгоритм Луна)</text>
+<line x1="453" y1="275.0" x2="620" y2="275.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="539.5" y="260.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[5] POST /cashout/initiate</text>
+<text x="539.5" y="272.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{card_number, expiry_date, agent_id}</text>
+<line x1="626" y1="315.0" x2="793" y2="315.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="712.5" y="306.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[6] Запрос на проверку карты</text>
+<line x1="799" y1="353.0" x2="632" y2="353.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="712.5" y="344.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[7] {card_holder, masked_phone} ✅</text>
+<line x1="626" y1="393.0" x2="966" y2="393.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="799.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[8] Запрос на отправку OTP</text>
+<text x="799.0" y="390.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{phone: masked_phone}</text>
+<line x1="972" y1="433.0" x2="113" y2="433.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="539.5" y="424.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[9] SMS с OTP-кодом 📲</text>
+<line x1="626" y1="471.0" x2="459" y2="471.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="539.5" y="462.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[10] {session_id, masked_phone, otp_sent: true}</text>
+<line x1="453" y1="511.0" x2="286" y2="511.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="366.5" y="496.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[11] "OTP отправлен. Попросите клиента</text>
+<text x="366.5" y="508.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">назвать код"</text>
+<line x1="280" y1="551.0" x2="113" y2="551.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="193.5" y="542.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[12] Запрашивает SMS-код</text>
+<line x1="107" y1="589.0" x2="274" y2="589.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="193.5" y="580.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[13] Называет OTP-код</text>
+<line x1="280" y1="627.0" x2="447" y2="627.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="366.5" y="618.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[14] Вводит OTP-код</text>
+<line x1="453" y1="667.0" x2="620" y2="667.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="539.5" y="652.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[15] POST /cashout/verify-otp</text>
+<text x="539.5" y="664.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, otp_code}</text>
+<path d="M626,697.0 L668,697.0 L668,721.0 L626,721.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="674" y="703.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[16] Проверка OTP</text>
+<text x="674" y="715.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">(срок 60 сек, корректность)</text>
+<line x1="626" y1="751.0" x2="459" y2="751.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="539.5" y="736.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[17] {verified: true, card_holder_name,</text>
+<text x="539.5" y="748.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">available_limit} ✅</text>
+<line x1="453" y1="791.0" x2="286" y2="791.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="366.5" y="782.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[18] Имя владельца и лимит отображены</text>
+<line x1="280" y1="829.0" x2="113" y2="829.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="193.5" y="820.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[19] "Какую сумму снять?"</text>
+<line x1="107" y1="867.0" x2="274" y2="867.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="193.5" y="858.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[20] Называет сумму</text>
+<line x1="280" y1="907.0" x2="447" y2="907.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="366.5" y="892.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[21] Вводит сумму</text>
+<text x="366.5" y="904.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">(50 000 – 10 000 000 сум)</text>
+<path d="M453,937.0 L495,937.0 L495,961.0 L453,961.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="501" y="943.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[22] Рассчитывает комиссию</text>
+<text x="501" y="955.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">(сумма × 1%)</text>
+<line x1="453" y1="991.0" x2="286" y2="991.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="366.5" y="976.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[23] Комиссия и итог отображены</text>
+<text x="366.5" y="988.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">(500 000 + 5 000 = 505 000 сум)</text>
+<line x1="280" y1="1031.0" x2="447" y2="1031.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="366.5" y="1022.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[24] Нажимает кнопку "Оплатить"</text>
+<line x1="453" y1="1071.0" x2="620" y2="1071.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="539.5" y="1056.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[25] POST /cashout/execute</text>
+<text x="539.5" y="1068.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{session_id, amount, agent_id, operator_id}</text>
+<line x1="626" y1="1111.0" x2="1139" y2="1111.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="885.5" y="1102.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[26] Проверяет депозит агента</text>
+<line x1="1145" y1="1149.0" x2="632" y2="1149.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="885.5" y="1140.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[27] Депозит достаточен ✅</text>
+<path d="M626,1177.0 L668,1177.0 L668,1201.0 L626,1201.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="674" y="1183.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[28] Проверка дневного лимита</text>
+<text x="674" y="1195.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">(≤ 30 000 000 сум)</text>
+<line x1="626" y1="1231.0" x2="793" y2="1231.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="712.5" y="1216.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[29] Запрос на дебетование карты</text>
+<text x="712.5" y="1228.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">{сумма + 1% комиссии}</text>
+<path d="M799,1268.0 L841,1268.0 L841,1292.0 L799,1292.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="847" y="1268.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[30] Списывает с карты:</text>
+<text x="847" y="1280.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• сумма → ELPAY</text>
+<text x="847" y="1292.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• 1% комиссии удерживает OSON</text>
+<line x1="799" y1="1327.0" x2="632" y2="1327.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="712.5" y="1318.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[31] {status: success, txn_id} ✅</text>
+<line x1="626" y1="1367.0" x2="1139" y2="1367.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="885.5" y="1352.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[32] Зачисление на депозит агента</text>
+<text x="885.5" y="1364.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">(+основная сумма)</text>
+<line x1="1145" y1="1407.0" x2="632" y2="1407.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="885.5" y="1398.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[33] Депозит обновлён ✅</text>
+<path d="M626,1449.0 L668,1449.0 L668,1473.0 L626,1473.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="674" y="1443.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[34] Сохраняется запись о вознаграждении:</text>
+<text x="674" y="1455.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• agent_reward: 0.2%</text>
+<text x="674" y="1467.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• elpay_net: 0.2%</text>
+<text x="674" y="1479.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">• oson_share: 0.6%</text>
+<path d="M626,1503.0 L668,1503.0 L668,1527.0 L626,1527.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="674" y="1515.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[35] Запись в журнал аудита</text>
+<line x1="626" y1="1555.0" x2="459" y2="1555.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="539.5" y="1540.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[36] {transaction_id, status: success,</text>
+<text x="539.5" y="1552.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">receipt_data, agent_balance_after}</text>
+<line x1="453" y1="1595.0" x2="286" y2="1595.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="366.5" y="1586.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[37] Транзакция выполнена успешно ✅</text>
+<path d="M453,1621.0 L495,1621.0 L495,1645.0 L453,1645.0" fill="none" stroke="#1F3864" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="501" y="1633.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="start" dominant-baseline="middle">[38] Генерация чека (PDF/термочек)</text>
+<line x1="453" y1="1671.0" x2="286" y2="1671.0" stroke="#2E5797" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr_ret)"/>
+<text x="366.5" y="1662.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#2E5797" text-anchor="middle" dominant-baseline="middle">[39] Чек отправлен на принтер 🖨️</text>
+<line x1="280" y1="1709.0" x2="113" y2="1709.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="193.5" y="1700.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[40] Выдаёт наличные 💵</text>
+<line x1="280" y1="1747.0" x2="113" y2="1747.0" stroke="#1F3864" stroke-width="1.8" stroke-dasharray="none" marker-end="url(#arr)"/>
+<text x="193.5" y="1738.0" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" fill="#1F3864" text-anchor="middle" dominant-baseline="middle">[41] Выдаёт чек 🧾</text>
+<rect x="40" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="107" y="1823.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">👤 Клиент</text>
+<rect x="213" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="280" y="1823.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🧑‍💼 Кассир</text>
+<rect x="386" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="453" y="1816.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🖥️ ELPAY</text>
+<text x="453" y="1829.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Frontend</text>
+<rect x="559" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="626" y="1816.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">⚙️ ELPAY</text>
+<text x="626" y="1829.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Backend</text>
+<rect x="732" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="799" y="1816.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🏦 OSON</text>
+<text x="799" y="1829.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Processing</text>
+<rect x="905" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="972" y="1816.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">📱 SMS</text>
+<text x="972" y="1829.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Gateway</text>
+<rect x="1078" y="1796" width="135" height="54" rx="6" fill="#1F3864" stroke="#0D2040" stroke-width="1.5"/>
+<text x="1145" y="1816.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">🗄️ Депозит</text>
+<text x="1145" y="1829.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Агента DB</text>
+</svg>
